@@ -71,7 +71,8 @@ def check_winner(line4, line5, line6):
         return False
 
 
-while check_winner == False:
+while check_winner(line1, line2, line3) == False:
+    print()
     print(f"{line1[0]} | {line1[1]} | {line1[2]}")
     print("——————————")
     print(f"{line2[0]} | {line2[1]} | {line2[2]}")
@@ -85,4 +86,7 @@ while check_winner == False:
         player2 = int(input("Player 2, where do you want to place your O? "))
         placeo(player2)
         turncounter -= 1
-    check_winner(line1, line2, line3)
+if turncounter == 2:
+    print("Player 1 wins!")
+else:
+    print("Player 2 wins!")
