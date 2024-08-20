@@ -52,26 +52,26 @@ def placex(n):
 def check_winner(line4, line5, line6):
     # This does not work yet
     if line4[0] == line4[1] == line4[2]:
-        winner = True
+        return True
     elif line5[0] == line5[1] == line5[2]:
-        winner = True
+        return True
     elif line6[0] == line6[1] == line6[2]:
-        winner = True
+        return True
     elif line4[0] == line5[0] == line6[0]:
-        winner = True
+        return True
     elif line4[1] == line5[1] == line6[1]:
-        winner = True
+        return True
     elif line4[2] == line5[2] == line6[2]:
-        winner = True
+        return True
     elif line4[0] == line5[1] == line6[2]:
-        winner = True
+        return True
     elif line4[2] == line5[1] == line6[0]:
-        winner = True
+        return True
     else:
-        return None
+        return False
 
 
-while winner == False:
+while check_winner == False:
     print(f"{line1[0]} | {line1[1]} | {line1[2]}")
     print("——————————")
     print(f"{line2[0]} | {line2[1]} | {line2[2]}")
