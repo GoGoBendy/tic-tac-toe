@@ -2,9 +2,9 @@ line1 = [1, 2, 3]
 line2 = [4, 5, 6]
 line3 = [7, 8, 9]
 
-winner = False
+WINNER = False
 
-turncounter = 1
+TURNCOUNTER = 1
 
 
 def placeo(n):
@@ -71,22 +71,28 @@ def check_winner(line4, line5, line6):
         return False
 
 
-while check_winner(line1, line2, line3) == False:
+while check_winner(line1, line2, line3) is False:
     print()
     print(f"{line1[0]} | {line1[1]} | {line1[2]}")
     print("——————————")
     print(f"{line2[0]} | {line2[1]} | {line2[2]}")
     print("——————————")
     print(f"{line3[0]} | {line3[1]} | {line3[2]}")
-    if turncounter != 2:
-        player1 = int(input("Player 1, where do you want to place your X? "))
+    if TURNCOUNTER != 2:
+        player1 = int(input("Player 1, where do you want to place an X? "))
         placex(player1)
-        turncounter += 1
+        TURNCOUNTER += 1
     else:
-        player2 = int(input("Player 2, where do you want to place your O? "))
+        player2 = int(input("Player 2, where do you want to place an O? "))
         placeo(player2)
-        turncounter -= 1
-if turncounter == 2:
+        TURNCOUNTER -= 1
+print()
+print(f"{line1[0]} | {line1[1]} | {line1[2]}")
+print("——————————")
+print(f"{line2[0]} | {line2[1]} | {line2[2]}")
+print("——————————")
+print(f"{line3[0]} | {line3[1]} | {line3[2]}")
+if TURNCOUNTER == 2:
     print("Player 1 wins!")
 else:
     print("Player 2 wins!")
