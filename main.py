@@ -7,6 +7,7 @@ WINNER = False
 TURNCOUNTER = 1
 
 
+# places an O in the desired spot
 def placeo(n):
     if n == 1:
         line1[0] = "O"
@@ -28,6 +29,7 @@ def placeo(n):
         line3[2] = "O"
 
 
+# places an X in the desired spot
 def placex(n):
     if n == 1:
         line1[0] = "X"
@@ -49,8 +51,8 @@ def placex(n):
         line3[2] = "X"
 
 
+# checks whether or not the same symbol is in a row, column, or diagonal
 def check_winner(line4, line5, line6):
-    # This does not work yet
     if line4[0] == line4[1] == line4[2]:
         return True
     elif line5[0] == line5[1] == line5[2]:
@@ -71,6 +73,7 @@ def check_winner(line4, line5, line6):
         return False
 
 
+# prints the board
 while check_winner(line1, line2, line3) is False:
     print()
     print(f"{line1[0]} | {line1[1]} | {line1[2]}")
@@ -78,6 +81,7 @@ while check_winner(line1, line2, line3) is False:
     print(f"{line2[0]} | {line2[1]} | {line2[2]}")
     print("——————————")
     print(f"{line3[0]} | {line3[1]} | {line3[2]}")
+    # asks the player where they want to place their symbol
     if TURNCOUNTER != 2:
         player1 = int(input("Player 1, where do you want to place an X? "))
         placex(player1)
